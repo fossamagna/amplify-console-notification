@@ -1,0 +1,46 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  amplify-console-notification
+
+  SAM Template for amplify-console-notification
+  
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 3
+
+Parameters:
+  AmplifySNSTopicArn:
+    Type: String
+    Description: SNS Topic arn to subscribe amplify notifications.
+  IdobataWebHookURL:
+    Type: String
+    Description: Idobata WebHook URL.
+
+Resources:
+  NotificationFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: notification/
+      Handler: app.lambdaHandler
+      Runtime: nodejs10.x
+      Events:
+        AmplifyNotificatoin:
+          Type: SNS # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Topic: !Ref AmplifySNSTopicArn
+      Environment:
+        Variables:
+          IDOBATA_WEBHOOK_URL: !Ref IdobataWebHookURL
+
+Outputs:
+  # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
+  # Find out more about other implicit resources you can reference within SAM
+  # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
+  NotificationFunction:
+    Description: "Notification Lambda Function ARN"
+    Value: !GetAtt NotificationFunction.Arn
+  NotificationFunctionIamRole:
+    Description: "Implicit IAM Role created for Notification function"
+    Value: !GetAtt NotificationFunctionRole.Arn
