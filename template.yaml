@@ -22,7 +22,7 @@ Resources:
   NotificationFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: notification/
+      CodeUri: notification/dist
       Handler: app.lambdaHandler
       Runtime: nodejs10.x
       Events:

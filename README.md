@@ -63,6 +63,7 @@ Replace `AMPLIFY_NOTIFICATION_TOPIC_ARN` and `IDOBATA_WEBHOOK_URL` in the comman
 Build your application with the `sam build` command.
 
 ```bash
+cd notification && npm run build && cd -
 amplify-console-notification$ sam build
 ```
 
