@@ -5,7 +5,7 @@ module.exports = {
   devtool: "inline-source-map",
   entry: "./src/app.ts",
   output: {
-    path: path.join(path.resolve(__dirname), "./dist"),
+    path: path.resolve(__dirname),
     filename: "app.js",
     libraryTarget: "commonjs2"
   },

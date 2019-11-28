@@ -3,7 +3,7 @@
     "target": "es2017",
     "module": "commonjs",
     "strict": true,
-    "outDir": "./dist",
+    "outDir": ".",
     "importHelpers": false,
     "moduleResolution": "node",
     "experimentalDecorators": true,
