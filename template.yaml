@@ -14,9 +14,16 @@ Parameters:
   AmplifySNSTopicArn:
     Type: String
     Description: SNS Topic arn to subscribe amplify notifications.
-  IdobataWebHookURL:
+  SenderType:
     Type: String
-    Description: Idobata WebHook URL.
+    Description: Type of Chat Service.
+    AllowedValues: 
+      - slack
+      - idobata
+    Default: slack
+  WebHookURL:
+    Type: String
+    Description: WebHook URL.
 
 Resources:
   NotificationFunction:
@@ -32,7 +39,8 @@ Resources:
             Topic: !Ref AmplifySNSTopicArn
       Environment:
         Variables:
-          IDOBATA_WEBHOOK_URL: !Ref IdobataWebHookURL
+          SENDER_TYPE: !Ref SenderType
+          WEBHOOK_URL: !Ref WebHookURL
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function

@@ -53,10 +53,11 @@ amplify-console-notification$ sam deploy \
     --capabilities CAPABILITY_IAM \
     --parameter-overrides \
         AmplifySNSTopicArn=AMPLIFY_NOTIFICATION_TOPIC_ARN \
-        IdobataWebHookURL=IDOBATA_WEBHOOK_URL
+        WebHookURL=WEBHOOK_URL \
+        SenderType=SENDER_TYPE
 ```
 
-Replace `AMPLIFY_NOTIFICATION_TOPIC_ARN` and `IDOBATA_WEBHOOK_URL` in the commands in this section with a sns topic arn of amplify notification and a Webhook URL of Idobata.
+Replace `AMPLIFY_NOTIFICATION_TOPIC_ARN`, `SENDER_TYPE` and `WEBHOOK_URL` in the commands in this section with a sns topic arn of amplify notification, type of chat service and a Webhook URL of Slack or Idobata.
 
 ## Use the SAM CLI to build and test locally
 

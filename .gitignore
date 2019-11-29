@@ -130,3 +130,5 @@ $RECYCLE.BIN/
 
 .aws-sam
 packaged.yaml
+
+env-vars
