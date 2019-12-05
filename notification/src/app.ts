@@ -1,6 +1,5 @@
-import axios from 'axios';
-import { URLSearchParams } from 'url';
 import { SNSEvent, SNSEventRecord, Context } from 'aws-lambda';
+import { getMessageSender } from './message-sender';
 
 export async function lambdaHandler(event: SNSEvent, context: Context) {
   try {
@@ -11,10 +10,8 @@ export async function lambdaHandler(event: SNSEvent, context: Context) {
   }
 };
 
-function postMessage(record: SNSEventRecord) {
-  const idobataHookUrl = process.env.IDOBATA_WEBHOOK_URL!;
-  const params = new URLSearchParams({
-    source: record.Sns.Message
-  });
-  return axios.post(idobataHookUrl, params);
+async function postMessage(record: SNSEventRecord) {
+  const type = process.env.SENDER_TYPE;
+  const sender = await getMessageSender(type);
+  return sender.sendMessage(record);
 }
