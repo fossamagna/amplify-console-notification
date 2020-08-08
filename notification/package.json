@@ -17,7 +17,7 @@
     "@types/aws-lambda": "8.10.59",
     "@types/jest": "26.0.7",
     "@types/node": "12.12.54",
-    "jest": "26.1.0",
+    "jest": "26.2.2",
     "ts-jest": "26.1.4",
     "ts-loader": "8.0.1",
     "typescript": "3.9.7",
