@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@types/aws-lambda": "8.10.61",
-    "@types/jest": "26.0.9",
+    "@types/jest": "26.0.10",
     "@types/node": "12.12.54",
     "jest": "26.2.2",
     "ts-jest": "26.2.0",
