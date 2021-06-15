@@ -1,6 +1,6 @@
 {
   "name": "notification",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Lambda Function tiggered by Amplify Console Notification",
   "main": "app.js",
   "repository": "https://github.com/fossamagna/amplify-console-notification",
