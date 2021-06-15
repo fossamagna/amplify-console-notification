@@ -1,5 +1,18 @@
 # amplify-console-notification
 
+Sends notifications about Amplify Console to a Slack channel or Idobata room.
+
+Support chat service:
+- Slack https://slack.com
+- Idobata https://idobata.io
+
+Made with ❤️ by fossamagna. Available on the AWS Serverless Application Repository
+
+License
+MIT License (@fossamagna)
+
+## Development
+
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders.
 
 - notification - Code for the application's Lambda function.
