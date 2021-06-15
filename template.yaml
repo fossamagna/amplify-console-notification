@@ -25,6 +25,19 @@ Parameters:
     Type: String
     Description: WebHook URL.
 
+Metadata:
+  AWS::ServerlessRepo::Application:
+    Name: amplify-console-notification
+    Description: "Sends notifications about Amplify Console to a Slack channel. Support chat: - Slack https://slack.com - Idobata https://idobata.io"
+    Author: fossamagna
+    SpdxLicenseId: MIT
+    LicenseUrl: LICENSE
+    ReadmeUrl: README.md
+    Labels: ['amplify', 'slack', 'idobata']
+    HomePageUrl: https://github.com/fossamagna/amplify-console-notification
+    SemanticVersion: 1.1.1
+    SourceCodeUrl: https://github.com/fossamagna/amplify-console-notification
+
 Resources:
   NotificationFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
