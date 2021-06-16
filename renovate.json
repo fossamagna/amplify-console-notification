@@ -1,5 +1,14 @@
 {
   "extends": [
     "config:base"
+  ],
+  "packageRules": [
+    {
+      "groupName": "jest monorepo",
+      "extends": "monorepo:jest",
+      "matchSourceUrlPrefixes": [
+        "https://github.com/kulshekhar/ts-jest"
+      ]
+    }
   ]
 }
