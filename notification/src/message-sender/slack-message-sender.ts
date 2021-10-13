@@ -18,8 +18,12 @@ export default class SlackMessageSender implements MessageSender {
     }
 
     const body = {
-      text: text,
-      color: color
+      attachments: [
+        {
+          text: text,
+          color: color
+        }
+      ]
     };
     return axios.post(slackHookUrl, body);
   }
