@@ -14,7 +14,7 @@
     "build": "webpack"
   },
   "devDependencies": {
-    "@types/aws-lambda": "8.10.147",
+    "@types/aws-lambda": "8.10.152",
     "@types/jest": "27.4.0",
     "@types/node": "14.18.5",
     "jest": "27.4.7",
